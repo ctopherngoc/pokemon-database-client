@@ -85,9 +85,10 @@ input {
 
 .sidebar {
   background-color: yellow;
-  position: static;
+  /* position was static */
+  position: relative;
   float: left;
-  height: 100vh;
+  height: 100%;
   width: 16%;
   margin-left: 0;
   margin-top: 0;
