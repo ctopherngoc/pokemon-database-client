@@ -2,7 +2,7 @@ var express = require('express');
 var app     = express();
 var mysql = require('./db-connector.js');
 var bodyParser = require('body-parser');
-PORT        = 80;
+PORT        = process.env.PORT || 2733;
 
 
 var handlebars = require('express-handlebars').create({
