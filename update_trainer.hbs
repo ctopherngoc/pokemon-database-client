@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{{#each foo}}
+{{this}}
+{{/each}}
+
+<body>
+
+<!-- Form to update current trainer information -->
+<!-- All data from Trainer except Gender and Region will auto-populate -->
+<!-- Gender and Region utilizes dropdowns via <option> hard to dynamically auto-populate with selected -->
+<!-- All are required to be selected for update to work -->
+ <div>
+    <h1>Update {{this.name_id}}</h1>
+    <form id="update_trainer" action="/update_trainer" class = "a_form" method="post">
+
+      <!-- hidden input for unique player id -->
+      <input type="hidden" id="unique_player_id" name="unique_player_id" value="{{this.unique_player_id}}" required>
+
+      <!-- input for name change -->
+      <label for="name_id" >Trainer Name</label>
+      <div>
+        <input type="text" required="required" id="name_id" name="name_id" value="{{this.name_id}}" required>
+      </div>
+
+      <!-- input for gender change -->
+      <label for="gender" >Gender</label>
+      <div>
+        <select id="gender" name="gender" required> 
+          <option value="M">Male</option>
+          <option value="F">Female</option>
+        </select>
+      </div>
+
+      <!-- input for age change -->
+      <label for="age">Age</label>
+      <div>
+      <input type="number" required="required" min="1" id="age" name="age" value="{{this.age}}" required>
+      </div>
+
+      <!-- input for region change -->
+      <label for="region">Region</label>
+      <div>
+        <select name="region">
+            {{#each Region}}
+            <option value="{{this.unique_region_id}}">{{this.region_name}}</option>
+            {{/each}}
+        </select>
+      </div>
+
+      <p>
+        <button type="submit">Update Trainer</button>
+      </p>
+
+    </form>
+    </div>
+  </body>
+
+
+</html>
