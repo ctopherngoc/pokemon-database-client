@@ -1,0 +1,28 @@
+<html>
+{{#each foo}}
+{{this}}
+{{/each}}
+<h3>Add new Region:</h3>
+<form id="addregion" action="/region" method="post">
+    Region Name: <input type="text" name="region_name"><br>
+    </select><br>
+    <input type="submit" value="Submit">
+</form>
+
+<h3>Regions:</h3>
+<table>
+    <thead>
+        <th>Region Id</th>
+        <th>Region Name</th>
+    </thead>
+    <tbody>
+        {{#each Region}}
+        <tr>
+            <td>{{unique_region_id}}</td>
+            <td>{{region_name}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+</html>
