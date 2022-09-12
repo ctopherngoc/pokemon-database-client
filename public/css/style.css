@@ -44,8 +44,9 @@ input {
 .tabcontent {
   overflow: hidden;
   background-color: gray;
-  width: 75%;
-  padding: 0px 0px;
+  /* was 75% */
+  width: 74.24%;
+  padding: 0px 0px 0px 10px;
   border: 1px solid black;
   border-top: none;
   height: 20%;
@@ -74,27 +75,18 @@ input {
   background-color: green;
 }
 
-/* .tabcontent {
-  background-color: gray;
-  position: relative;
-  width: 50%;
-  padding: 12px 0px;
-  border: 1px solid black;
-  border-top: none;
-} */
-
 .sidebar {
   background-color: yellow;
-  /* position was static */
-  position: relative;
+  position: static;
   float: left;
-  height: 100%;
+  height: 100bh;
   width: 16%;
   margin-left: 0;
   margin-top: 0;
-  margin-right: 20px;
+  /*margin-right: 20px; */
   padding: 0;
   text-align: center;
+  margin-right: 0px;
 }
 
 .sidebutton {
@@ -111,4 +103,9 @@ body {
   background-color: gray;
   margin: 0;
   padding: 0;
+}
+
+h3 {
+  margin-top: 0px;
+  margin-right: 230px;
 }
