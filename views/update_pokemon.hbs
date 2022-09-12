@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<body>
+ <div>
+    
+    <h1>Update {{this.pokemon_name}}</h1>
+    <form id="update_pokemon" action="/update_pokemon" class = "a_form" method="post">
+        <input type="hidden" id="breed_id" name="breed_id" value="{{this.breed_id}}" required>
+        
+        <label for="pokemon_name" >Pokemon Name</label>
+        <div>
+            <input type="text" required="required" id="pokemon_name" name="pokemon_name" value="{{this.pokemon_name}}" required>
+        </div>
+
+        <label for="health" >Health</label>
+        <div>
+            <input type="number" required="required" id="health" name="health" min="1" value="{{this.health}}" required>
+        </div>
+
+        <label for="attack" >Attack</label>
+        <div>
+            <input type="number" required="required" id="attack" name="attack" min="1" value="{{this.attack}}" required>
+        </div>
+    
+        <label for="defence" >Defence</label>
+        <div>
+            <input type="number" required="required" id="defence" name="defence" min="1" value="{{this.defence}}" required>
+        </div>
+
+        <label for="special_atk" >Special Attack</label>
+        <div>
+            <input type="number" required="required" id="special_atk" name="special_atk" min="1" value="{{this.special_atk}}" required>
+        </div>
+        
+        <label for="special_def" >Special Deffence</label>
+        <div>
+            <input type="number" required="required" id="special_def" name="special_def" min="1" value="{{this.special_def}}" required>
+        </div>
+
+        <label for="speed" >Speed</label>
+        <div>
+            <input type="number" required="required" id="speed" name="speed" min="1" value="{{this.speed}}" required>
+        </div>
+
+        <label for="type_1" >Type 1</label>
+        <div>
+            <input type="text" required="required" id="type_1" name="type_1" min="1" value="{{this.type_1}}" required>
+        </div>
+
+        <label for="type_2" >Type 2</label>
+        <div>
+            <input type="text" id="type_2" name="type_2" min="1" value="{{this.type_2}}">
+        </div>
+
+        <label for="ability_1" >Ability 1</label>
+        <div>
+            <input type="text" required="required" id="ability_1" name="ability_1" min="1" value="{{this.ability_1}}" required>
+        </div>
+
+        <label for="ability_2" >Abiltiy 2</label>
+        <div>
+            <input type="text" id="ability_2" name="ability_2" value="{{this.ability_2}}">
+        </div>
+
+        <label for="hidden_ability" >Hidden Ability</label>
+        <div>
+            <input type="text" id="hidden_ability" name="hidden_ability" value="{{this.hidden_ability}}">
+        </div>
+      <p>
+      <button type="submit">Update Trainer</button>
+      </p>
+
+    </form>
+    </div>
+  </body>
+
+
+</html>

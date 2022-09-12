@@ -1,0 +1,112 @@
+<html>
+{{#each foo}}
+{{this}}
+{{/each}}
+
+<!-- Trainer information from database based on querey -->
+<h3>Trainers</h3>
+
+    <div class="tab">
+      <button class="tablinks" onclick="openTab(event, 'filter')" id="defaultOpen">Filter</button>
+      <button class="tablinks" onclick="openTab(event, 'add')">Add</button>
+    </div>
+
+    <div id="filter" class="tabcontent">
+
+        <!-- filter displayed based on trainer name -->
+        <!-- may require update to have more options to filter -->
+        <!-- example gender, region, age-->
+        <div>
+            <form id="search-trainer" action="/trainer" method="get"> 
+                {{!-- <label for="name_id">Search By Trainer Name</label --}}
+                <h3>Search By Trainer Name</h3>
+                <div>
+                    <select name="name_id" id="name_id">
+                        <option value="">Select by Name</option>
+                        {{#each Trainer}}
+                        <option value="{{this.name_id}}">{{this.name_id}}</option>
+                        {{/each}}
+                    </select>
+                    <p>
+                        <input type="submit" value="Search">
+                    </p>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+
+    <div id="add" class="tabcontent">
+        <h3>Add Trainer</h3>
+
+        <!-- add trainer to database -->
+        <form id="addtrainer" action="/trainer" method="post">
+            <table>
+                <tr>
+                    <td>
+                        Name: <input type="text" required="required" name="name_id"><br>
+                    </td>
+
+                    <td>
+                        <Label> Gender : </Label>
+                        <select name="gender">
+                            <option value="M">Male</option>
+                            <option value="F">Female</option>option>
+                        </select>
+                    </td>
+
+                    <td>
+                        Age: <input type="number" required="required"  min="1" value="1" name="age">
+                    </td>
+
+                    <td>
+                        <label> Region: </label>
+                    <select name="region">
+                        {{#each Region}}
+                        <option value="{{this.unique_region_id}}">{{this.region_name}}</option>
+                        {{/each}}
+                    </select>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <input type="submit" value="Submit">
+            <br>
+        </form>
+        <br>
+    </div>
+
+<table>
+    <thead>
+        <th>Trainer ID</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Age</th>
+        <th>Region</th>
+    </thead>
+    <tbody>
+        {{#each Trainer}}
+        <form id="" action="/trainer" method="get"></form>
+            <tr>
+                <td>{{this.unique_player_id}}</td>
+                <td>{{this.name_id}}</td>
+                <td>{{this.gender}}</td>
+                <td>{{this.age}}</td>
+                <td>{{this.region}}</td>
+                <td><a href="/delete_trainer?unique_player_id={{this.unique_player_id}}">Delete</a></td>
+                <td><a href="/update_trainer?unique_player_id={{this.unique_player_id}}&name_id={{this.name_id}}&gender={{this.gender}}&age={{this.age}}&region={{this.region}}">Update</a></td>
+            </tr>
+            {{/each}}
+        </form>
+    </tbody>
+    <script>
+        document.getElementById('defaultOpen').click();
+    </script>
+    <tfoot>
+        <tr>
+            <td><a href="/trainer"><button>Show All</button></a></td>
+        </tr>
+    </tfoot>
+</table>
+    
+</html>

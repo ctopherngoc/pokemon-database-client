@@ -20,7 +20,7 @@ VALUES
 CREATE TABLE `Trainer` (
     `unique_player_id` INT AUTO_INCREMENT NOT NULL,
     `name_id` VARCHAR(12) NOT NULL,
-    `gender` BOOLEAN NOT NULL,
+    `gender` VARCHAR(1) NOT NULL,
     `age` INT NOT NULL,
     `region` INT NOT NULL,
     PRIMARY KEY (`unique_player_id`),
@@ -29,8 +29,8 @@ CREATE TABLE `Trainer` (
 
 INSERT INTO `Trainer` (`name_id`, `gender`, `age`, `region`)
 VALUES
-    ("chrisndubs", 1, 69, 1),
-    ("swervin", 1, 96, 2);
+    ("chrisndubs", "M", 69, 1),
+    ("swervin", "M", 96, 2);
 
 CREATE TABLE `Pokemon` (
     `breed_id` INT(3) AUTO_INCREMENT UNIQUE NOT NULL,
@@ -55,8 +55,8 @@ VALUES
     ("Squirtle", 15, 25, 24, 15, 20, 30, "Water", NULL, "Water Gun", NULL, NULL);
 
 CREATE TABLE `Storage` (
-    `pid` INT UNIQUE NOT NULL,
-    `pokeid` INT UNIQUE NOT NULL,
+    `pid` INT NOT NULL,
+    `pokeid` INT NOT NULL,
     FOREIGN KEY(`pid`) REFERENCES `Trainer`(`unique_player_id`),
     FOREIGN KEY(`pokeid`) REFERENCES `Pokemon`(`breed_id`)
 );

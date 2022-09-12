@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+	<title>Pokemon Pink</title>
+    {{!-- {{#each css}} --}}
+    <link rel="stylesheet" href="/css/style.css" />
+    {{!-- {{/each}} --}}
+    {{#each jsscripts}}
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	</script>
+    {{/each}}
+    <script src="/js/script.js"></script>
+
+</head>
+<body>
+    <div class="sidebar">
+        <h2>POKEMON DATABASE</h2>
+        <p>CAN YOU CATCH THEM ALL?</p>
+        <button class="sidebutton" onclick=location.href="/">Home</button></br>
+        <button class="sidebutton" onclick=location.href="/trainer">Trainer</button></br>
+        <button class="sidebutton" onclick=location.href="/pokemon">Pokemon</button></br>
+        <button class="sidebutton" onclick=location.href="/storage">Storage</button></br>
+        <button class="sidebutton" onclick=location.href="/region">Region</button></br>
+  </div>
+    {{!-- <a href='/'>Home</a>
+    <a href='/pokemon'>Pokemons</a>
+    <a href='/trainer'>Trainers</a>
+    <a href='/storage'>Storage</a>
+    <a href='/region'>Regions</a> --}}
+	{{{body}}}
+</body>
+</html>

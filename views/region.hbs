@@ -1,0 +1,81 @@
+<html>
+{{#each foo}}
+{{this}}
+{{/each}}
+
+<!-- database data from query -->
+<h3>Regions</h3>
+
+  <div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'filter')" id="defaultOpen">Filter</button>
+    <button class="tablinks" onclick="openTab(event, 'add')">Add</button>
+  </div>
+
+  <div id="filter" class="tabcontent">
+
+    <!-- Form for searching Region based on Region name -->
+    <h3> Search for Region</h3>
+
+    <form id="search-region" action="/region" method="get"> 
+        <div>
+            <select name="region_name" id="region_name">
+                <option value="">Select by Name</option><br>
+                {{#each Region}}
+                <option value="{{this.region_name}}">{{this.region_name}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <p>
+            <input type="submit" value="Search">
+        </p>
+    </form>
+  </div>
+
+  <div id="add" class="tabcontent">
+    <!-- Form for adding Region -->
+    <h3>Add new Region:</h3>
+    <form id="addregion" required="required" action="/region" method="post">
+        Region Name:
+        <br>
+        <input type="text" required="required" name="region_name">
+        </select>
+        <br><br>
+        <input type="submit" value="Submit">
+        <br>
+    </form>
+    <br>
+  </div>
+
+<table>
+    <thead>
+        <th>Region Id</th>
+        <th>Region Name</th>
+    </thead>
+    <tbody>
+        {{#each Region}}
+        <tr>
+            <td>{{this.unique_region_id}}</td>
+            <td>{{this.region_name}}</td>
+
+            <!-- possibly remove delete button -->
+            <!-- no reason to have delete, makes thinfgs more complicated -->
+            <!-- can just upddate if error, or different region_id - region_name connection -->
+            {{!-- <td><a href="/delete_region?unique_player_id={{this.region_id}}">Delete</a></td> --}}
+            {{!-- <td><a href="/update_region">Update</a></td> --}}
+            <td><a href="/update_region?region_id={{this.unique_region_id}}&region_name={{this.region_name}}">Update</a></td>
+        </tr>
+        {{/each}}
+    </tbody>
+    <tfoot>
+        <tr>
+            <td><a href="/region"><button>Show All</button></a></td>
+        </tr>
+    </tfoot>
+</table>
+
+<script>
+  document.getElementById('defaultOpen').click();
+</script>
+
+
+</html>

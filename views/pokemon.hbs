@@ -1,0 +1,191 @@
+<html>
+{{#each foo}}
+{{this}}
+{{/each}}
+
+<!-- Populate data from Pokemon database based on query -->
+<h3>Pokemon</h3>
+
+  <div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'filter')" id="defaultOpen">Filter</button>
+    <button class="tablinks" onclick="openTab(event, 'add')">Add</button>
+    {{!-- <button class="tablinks" onclick="openTab(event, 'edit')">Update</button> --}}
+  </div>
+
+<div id="filter" class="tabcontent">
+    <h3> Search for Pokemon</h3>
+    <form id="search-pokemon" action="/pokemon" method="get"> 
+        <label for="pokemon_name"></label>
+                    Name:
+                    <select name="pokemon_name" id="pokemon_name">
+                        <option value="">Select by Name</option>
+                        {{#each Pokemon}}
+                        <option value="{{this.pokemon_name}}">{{this.pokemon_name}}</option>
+                        {{/each}}
+                    </select>
+                    <br>
+                    Type_1: <input type="text" name="type_1"><br>
+                    Type_2: <input type="text" name="type_2"><br>
+                    Ability 1: <input type="text" name="ability_1"><br>
+                    Ability 2: <input type="text" name="ability_2"><br>
+                    Hidden Ability: <input type="text" name="hidden_ability">
+                <br>
+
+        <p>
+            <input type="submit" value="Search">
+        </p>
+    </form>
+</div>
+
+  <div id="add" class="tabcontent">
+    {{!-- <h3>Add</h3> --}}
+    <h3>Add New Pokemon</h3>
+    <form id="addpokemon" action="/pokemon" method="post">
+        <table id = "tab_table">
+            <tr>
+                <td id ="tab_cell">Pokemon Name: <input type="text" required="required" name="pokemon_name"></td>
+                <td id ="tab_cell">HP: <input type="number" required="required" name="health"></td>
+            </tr>
+            <tr>
+                <td id ="tab_cell">Attack: <input type="number" required="required" name="attack"></td>
+                <td id ="tab_cell">Special Attack: <input type="number" required="required" name="special_atk"><br></td>
+            </tr>
+            <tr>
+                <td id ="tab_cell">Defence: <input type="number" required="required" name="defence"></td>
+                <td id ="tab_cell">Special Defence: <input type="number" required="required" name="special_def"></td>
+            </tr>
+            <tr>
+                <td id ="tab_cell">Speed: <input type="number" required="required" name="speed"></td>
+                <td id ="tab_cell">Hidden Ability: <input type="text" required="required" name="hidden_ability"></td>
+            </tr>
+            <tr>
+                <td id ="tab_cell">Type_1: <input type="text" required="required" name="type_1"></td>
+                <td id ="tab_cell">Type_2: <input type="text" name="type_2"></td>
+            </tr>
+            <tr>
+                <td id ="tab_cell">Ability 1: <input type="text" required="required" name="ability_1"></td>
+                <td id ="tab_cell">Ability 2: <input type="text" name="ability_2"></td>
+            </tr>
+    </table>
+        <br>
+        <input type="submit" value="Submit">
+        <br>
+    </form>
+  </div>
+
+  {{!-- <div id="edit" class="tabcontent">
+    <h3>Update</h3>
+    <input type="text" placeholder="Pokemon">
+    <input type="text" placeholder="HP">
+    <input type="text" placeholder="Attack">
+    <input type="text" placeholder="Special ATK">
+    <input type="text" placeholder="Defence">
+    <input type="text" placeholder="Special DEF">
+    <input type="text" placeholder="Speed">
+    <input type="text" placeholder="Ability 1">
+    <input type="text" placeholder="Ability 2">
+    <input type="text" placeholder="Hidden Ability"></br>
+    <input type="button" value="Edit">
+  </div> --}}
+<table>
+    <thead>
+        <th>Pokemon Id</th>
+        <th>Pokemon Name</th>
+        <th>HP</th>
+        <th>Attack</th>
+        <th>Defence</th>
+        <th>Special Attack</th>
+        <th>Special Defence</th>
+        <th>Speed</th>
+        <th>Type 1</th>
+        <th>Type 2</th>
+        <th>Ability 1</th>
+        <th>Ability 2</th>
+        <th>Hidden Ability</th>
+    </thead>
+    <tbody>
+        {{#each Pokemon}}
+        <tr>
+            <td>{{this.breed_id}}</td>
+            <td>{{this.pokemon_name}}</td>
+            <td>{{this.health}}</td>
+            <td>{{this.attack}}</td>
+            <td>{{this.defence}}</td>
+            <td>{{this.special_atk}}</td>
+            <td>{{this.special_def}}</td>
+            <td>{{this.speed}}</td>
+            <td>{{this.type_1}}</td>
+            <td>{{this.type_2}}</td>
+            <td>{{this.ability_1}}</td>
+            <td>{{this.ability_2}}</td>
+            <td>{{this.hidden_ability}}</td>
+            <td><a href="/delete_pokemon?breed_id={{this.breed_id}}">Delete</a></td>
+            <td>
+                <a href="/update_pokemon?breed_id={{this.breed_id}}&pokemon_name={{this.pokemon_name}}&health={{this.health}}&attack={{this.attack}}&defence={{this.defence}}&special_atk={{this.special_atk}}&special_def={{this.special_def}}&speed={{this.speed}}&type_1={{this.type_1}}&type_2={{this.type_2}}&ability_1={{this.ability_1}}&ability_2={{this.ability_2}}&hidden_ability={{hidden_ability}}">Update</a>
+            </td>
+        </tr>
+        {{/each}}
+
+    </tbody>
+            <tfoot>
+            <tr>
+                <td><a href="/pokemon"><button>Show All</button></a></td>
+            </tr>
+        </tfoot>
+    </tbody>
+</table>
+
+<!-- Form to add new pokemon to databse -->
+{{!-- <h3>Add New Pokemon</h3>
+<form id="addpokemon" action="/pokemon" method="post">
+    Pokemon Name: <input type="text" required="required" name="pokemon_name"><br>
+    HP: <input type="number" required="required" name="health"><br>
+    Attack: <input type="number" required="required" name="attack"><br>
+    Special Attack: <input type="number" required="required" name="special_atk"><br>
+    Defence: <input type="number" required="required" name="defence"><br>
+    Special Defence: <input type="number" required="required" name="special_def"><br>
+    Speed: <input type="number" required="required" name="speed"><br>
+    Type_1: <input type="text" required="required" name="type_1"><br>
+    Type_2: <input type="text" name="type_2"><br>
+    Ability 1: <input type="text" required="required" name="ability_1"><br>
+    Ability 2: <input type="text" name="ability_2"><br>
+    Hidden Ability: <input type="text" required="required" name="hidden_ability"><br>
+    <br>
+    <input type="submit" value="Submit">
+</form> --}}
+
+
+<br>
+
+<!-- Filter displayed data based on pokemon_name -->
+<!-- may add more filter options such as other Pokemon attributes -->
+{{!-- <form id="search-pokemon" action="/pokemon" method="get"> 
+    <div>
+        <h3> Search for Pokemon</h3>
+        <label for="pokemon_name"></label>
+        <div>
+            Name:
+            <select name="pokemon_name" id="pokemon_name">
+                <option value="">Select by Name</option>
+                {{#each Pokemon}}
+                <option value="{{this.pokemon_name}}">{{this.pokemon_name}}</option>
+                {{/each}}
+            </select><br>
+            Type_1: <input type="text" name="type_1"><br>
+            Type_2: <input type="text" name="type_2"><br>
+            Ability 1: <input type="text" name="ability_1"><br>
+            Ability 2: <input type="text" name="ability_2"><br>
+            Hidden Ability: <input type="text" name="hidden_ability"><br>
+        </div>
+    </div>
+
+    <p>
+        <input type="submit" value="Search">
+    </p>
+</form> --}}
+<script>
+document.getElementById('defaultOpen').click();
+</script>
+<br>
+
+</html>

@@ -1,0 +1,113 @@
+head {
+  height: 0;
+}
+
+.tab {
+  overflow: hidden;
+  border: 1px solid;
+  background-color: gray;
+  width: 75%;
+}
+.linkc{
+  margin-left: 200px;
+}
+
+div h1 {
+  border: 1px solid;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background-color: gray;
+  width: 75%;
+  height: 35px;
+}
+
+#tab_table {
+  text-align: left;
+  border: none;
+}
+
+table{
+  text-align: center;
+  width: 75%;
+}
+
+td, tr {
+  background-color: gray;
+}
+
+input {
+  text-align: center;
+  padding: 2px;
+  background-color: lightgray;
+}
+.tabcontent {
+  overflow: hidden;
+  background-color: gray;
+  width: 75%;
+  padding: 0px 0px;
+  border: 1px solid black;
+  border-top: none;
+  height: 20%;
+}
+
+/* .wholetab {
+  margin-left: 116px;
+} */
+
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+
+}
+
+.tab button:hover {
+  background-color: purple;
+}
+
+.tab button.active {
+  background-color: green;
+}
+
+/* .tabcontent {
+  background-color: gray;
+  position: relative;
+  width: 50%;
+  padding: 12px 0px;
+  border: 1px solid black;
+  border-top: none;
+} */
+
+.sidebar {
+  background-color: yellow;
+  position: static;
+  float: left;
+  height: 100vh;
+  width: 16%;
+  margin-left: 0;
+  margin-top: 0;
+  margin-right: 20px;
+  padding: 0;
+  text-align: center;
+}
+
+.sidebutton {
+  width: 100%;
+  background-color: lightpink;
+}
+
+ul {
+  list-style-type: none;
+}
+
+
+body {
+  background-color: gray;
+  margin: 0;
+  padding: 0;
+}

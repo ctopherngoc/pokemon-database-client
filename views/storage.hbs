@@ -1,0 +1,74 @@
+<html>
+{{#each foo}}
+{{this}}
+{{/each}}
+
+<!-- Displays storage data from database based on query -->
+<!-- update button not needed -->
+<h3>Storage</h3>
+
+<div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'filter')" id="defaultOpen">Filter</button>
+    <button class="tablinks" onclick="openTab(event, 'add')">Add</button>
+</div>
+
+<div id="filter" class="tabcontent">
+    <h3> Search for Trainer's Storage</h3>
+
+    <form id="search-storage" action="/storage" method="get"> 
+        <div>
+            <select name="pid" id="pid">
+                <option value="">Select by Trainer ID</option>
+                {{#each Storage1}}
+                <option value="{{this.unique_player_id}}">{{this.unique_player_id}}</option>
+                {{/each}}
+            </select>
+        </div>
+
+        <p>
+            <input type="submit" value="Search">
+        </p>
+    </form>
+</div>
+
+<div id="add" class="tabcontent">
+    <!-- Filter based on trainer pid -->
+    <!-- May add option to also filter based on breed_id -->
+
+    <h3>Trainer's Pokemons</h3>
+
+    <form id="addstorage" action="/storage" method="post">
+        Trainer ID: <input type="number" required="required" min="1" name="pid"><br>
+        Pokemon ID: <input type="number" required="required" min="1" name="pokeid"></br>
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+</div>
+
+<table>
+    <thead>
+        <th>Trainer ID</th>
+        <th>Pokemon ID</th>
+    </thead>
+    <tbody>
+        {{#each Storage}}
+        <tr>
+            <td>{{this.pid}}</td>
+            <td>{{this.pokeid}}</td>
+            <td><a href="/delete_storage?pid={{this.pid}}&pokeid={{this.pokeid}}">Delete</a></td>
+        </tr>
+        {{/each}}
+    </tbody>
+    <tfoot>
+        <tr>
+            <td><a href="/storage"><button>Show All</button></a></td>
+        </tr>
+    </tfoot>
+</table>
+
+
+<script>
+    document.getElementById('defaultOpen').click();
+</script>
+
+</html>
