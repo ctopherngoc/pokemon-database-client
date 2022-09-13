@@ -79,7 +79,7 @@ input {
   background-color: yellow;
   position: static;
   float: left;
-  height: 100bh;
+  height: 100vh;
   width: 16%;
   margin-left: 0;
   margin-top: 0;
@@ -96,6 +96,7 @@ input {
 
 ul {
   list-style-type: none;
+  margin-left: 200px
 }
 
 
