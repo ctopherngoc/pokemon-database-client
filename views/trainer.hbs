@@ -4,62 +4,66 @@
 {{/each}}
 
 <!-- Trainer information from database based on querey -->
-<h3>Trainers</h3>
+<div class="mainbody">
+    <h3>Trainers</h3>
 
-    <div class="tab">
-      <button class="tablinks" onclick="openTab(event, 'filter')" id="defaultOpen">Filter</button>
-      <button class="tablinks" onclick="openTab(event, 'add')">Add</button>
-    </div>
-
-    <div id="filter" class="tabcontent">
-
-        <!-- filter displayed based on trainer name -->
-        <!-- may require update to have more options to filter -->
-        <!-- example gender, region, age-->
-        <div>
-            <form id="search-trainer" action="/trainer" method="get"> 
-                {{!-- <label for="name_id">Search By Trainer Name</label --}}
-                <h3>Search By Trainer Name</h3>
-                <div>
-                    <select name="name_id" id="name_id">
-                        <option value="">Select by Name</option>
-                        {{#each Trainer}}
-                        <option value="{{this.name_id}}">{{this.name_id}}</option>
-                        {{/each}}
-                    </select>
-                    <p>
-                        <input type="submit" value="Search">
-                    </p>
-                </div>
-            </form>
-            
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'filter')" id="defaultOpen">Filter</button>
+            <button class="tablinks" onclick="openTab(event, 'add')">Add</button>
         </div>
-    </div>
+
+        <div id="filter" class="tabcontent">
+
+            <!-- filter displayed based on trainer name -->
+            <!-- may require update to have more options to filter -->
+            <!-- example gender, region, age-->
+            <div>
+                <form id="search-trainer" action="/trainer" method="get"> 
+                    {{!-- <label for="name_id">Search By Trainer Name</label --}}
+                    <h3 class="tabelement">Search By Trainer Name</h3>
+                    <div class="tabelement">
+                        <select name="name_id" id="name_id">
+                            <option value="">Select by Name</option>
+                            {{#each Trainer}}
+                            <option value="{{this.name_id}}">{{this.name_id}}</option>
+                            {{/each}}
+                        </select>
+                        <p>
+                            <input type="submit" value="Search">
+                        </p>
+                    </div>
+                </form>
+                
+            </div>
+        </div>
 
     <div id="add" class="tabcontent">
-        <h3>Add Trainer</h3>
+        <h3 class="tabelement">Add Trainer</h3>
 
         <!-- add trainer to database -->
-        <form id="addtrainer" action="/trainer" method="post">
-            <table>
+        <form class="tabelement" id="addtrainer" action="/trainer" method="post">
+            <table id="tab_table">
                 <tr>
-                    <td>
+                    <td id="tab_cell">
                         Name: <input type="text" required="required" name="name_id"><br>
                     </td>
-
-                    <td>
+                </tr>
+                <tr>
+                    <td id="tab_cell">
                         <Label> Gender : </Label>
                         <select name="gender">
                             <option value="1">Male</option>
                             <option value="0">Female</option>option>
                         </select>
                     </td>
-
-                    <td>
-                        Age: <input type="number" required="required"  min="1" value="1" name="age">
+                </tr>
+                <tr>
+                    <td id="tab_cell">
+                        Age: <input class="submitbutton" type="number" required="required"  min="1" value="1" name="age">
                     </td>
-
-                    <td>
+                </tr>
+                <tr>
+                    <td id="tab_cell">
                         <label> Region: </label>
                     <select name="region">
                         {{#each Region}}
@@ -74,7 +78,7 @@
             <br>
         </form>
         <br>
-    </div>
+</div>
 
 <table>
     <thead>
@@ -108,5 +112,7 @@
         </tr>
     </tfoot>
 </table>
+
+</div>
     
 </html>

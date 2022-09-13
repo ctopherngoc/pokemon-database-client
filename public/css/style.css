@@ -8,9 +8,9 @@ head {
   background-color: gray;
   width: 75%;
 }
-.linkc{
+/* .linkc{
   margin-left: 200px;
-}
+} */
 
 div h1 {
   border: 1px solid;
@@ -25,6 +25,7 @@ div h1 {
 #tab_table {
   text-align: left;
   border: none;
+  border-spacing: 0px;
 }
 
 table{
@@ -38,23 +39,19 @@ td, tr {
 
 input {
   text-align: center;
-  padding: 2px;
+  padding: 0px;
   background-color: lightgray;
 }
 .tabcontent {
   overflow: hidden;
   background-color: gray;
-  /* was 75% */
-  width: 74.24%;
-  padding: 0px 0px 0px 10px;
+  /* was 74.24% */
+  width: 75%;
   border: 1px solid black;
   border-top: none;
   height: 20%;
+  /* box-sizing: border-box; */
 }
-
-/* .wholetab {
-  margin-left: 116px;
-} */
 
 .tab button {
   background-color: inherit;
@@ -83,9 +80,13 @@ input {
   width: 16%;
   margin-left: 0;
   margin-top: 0;
-  /*margin-right: 20px; */
   padding: 0;
   text-align: center;
+  margin-right: 0px;
+}
+.mainbody {
+  background-color: blue;
+  position: static;
   margin-right: 0px;
 }
 
@@ -96,7 +97,7 @@ input {
 
 ul {
   list-style-type: none;
-  margin-left: 200px
+  margin-left: 10px
 }
 
 
@@ -108,5 +109,14 @@ body {
 
 h3 {
   margin-top: 0px;
-  margin-left: 230px;
+  padding-top: 5px;
+  margin-bottom: 5px;
+}
+
+.tabelement {
+  padding-left: 10px;
+}
+
+.submitbutton {
+  margin-left: 5px;
 }
