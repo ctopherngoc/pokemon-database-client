@@ -16,21 +16,19 @@
         <h3 class="tabelement"> Search for Pokemon</h3>
         <form class="tabelement" id="search-pokemon" action="/pokemon" method="get"> 
             <label for="pokemon_name"></label>
-                        Name:
-                        <select name="pokemon_name" id="pokemon_name">
-                            <option value="">Select by Name</option>
-                            {{#each Pokemon}}
-                            <option value="{{this.pokemon_name}}">{{this.pokemon_name}}</option>
-                            {{/each}}
-                        </select>
-                        <br>
-                        Type_1: <input type="text" name="type_1"><br>
-                        Type_2: <input type="text" name="type_2"><br>
-                        Ability 1: <input type="text" name="ability_1"><br>
-                        Ability 2: <input type="text" name="ability_2"><br>
-                        Hidden Ability: <input type="text" name="hidden_ability">
-                    <br>
-
+                Name:
+                <select name="pokemon_name" id="pokemon_name">
+                    <option value="">Select by Name</option>
+                    {{#each Pokemon}}
+                    <option value="{{this.pokemon_name}}">{{this.pokemon_name}}</option>
+                    {{/each}}
+                </select>
+                <br>
+            Type_1: <input type="text" name="type_1"><br>
+            Type_2: <input type="text" name="type_2"><br>
+            Ability 1: <input type="text" name="ability_1"><br>
+            Ability 2: <input type="text" name="ability_2"><br>
+            Hidden Ability: <input type="text" name="hidden_ability"><br>
             <p>
                 <input type="submit" value="Search">
             </p>
@@ -99,6 +97,7 @@
         </table>
             <br>
             <input type="submit" value="Submit">
+            <br>
             <br>
         </form>
     </div>

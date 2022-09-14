@@ -4,7 +4,6 @@
 {{/each}}
 
 <!-- Displays storage data from database based on query -->
-<!-- update button not needed -->
 <div class="mainbody">
     <h3 class="tabelement">Storage</h3>
 
@@ -34,13 +33,12 @@
 
     <div id="add" class="tabcontent">
         <!-- Filter based on trainer pid -->
-        <!-- May add option to also filter based on breed_id -->
-
         <h3 class="tabelement">Trainer's Pokemons</h3>
 
         <form class="tabelement" id="addstorage" action="/storage" method="post">
             Trainer ID: <input type="number" required="required" min="1" name="pid"><br>
             Pokemon ID: <input type="number" required="required" min="1" name="pokeid"></br>
+            <br>
             <input type="submit" value="Submit">
         </form>
         <br>
