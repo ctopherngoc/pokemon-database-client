@@ -27,7 +27,7 @@
                             {{/each}}
                         </select>
                         <p>
-                            <input type="submit" value="Search">
+                            <button type="submit">Search</button>
                         </p>
                     </div>
                 </form>
@@ -72,7 +72,7 @@
                 </tr>
             </table>
             <br>
-            <input type="submit" value="Submit">
+            <button type="submit">Submit</button>
             <br>
         </form>
         <br>
@@ -95,9 +95,10 @@
                 <td>{{this.gender}}</td>
                 <td>{{this.age}}</td>
                 <td>{{this.region}}</td>
-                <td><a href="/delete_trainer?unique_player_id={{this.unique_player_id}}">Delete</a>
-                <a href="/update_trainer?unique_player_id={{this.unique_player_id}}&name_id={{this.name_id}}&gender={{this.gender}}&age={{this.age}}&region={{this.region}}">Update</a></td>
-                {{!-- <td><a href="/update_trainer?unique_player_id={{this.unique_player_id}}&name_id={{this.name_id}}&gender={{this.gender}}&age={{this.age}}&region={{this.region}}">Update</a></td> --}}
+                    
+                <td>
+                <a href="/delete_trainer?unique_player_id={{this.unique_player_id}}"><button>Delete</button></a>
+                <a href="/update_trainer?unique_player_id={{this.unique_player_id}}&name_id={{this.name_id}}&gender={{this.gender}}&age={{this.age}}&region={{this.region}}"><button>Update</button></a></td>
             </tr>
             {{/each}}
         </form>

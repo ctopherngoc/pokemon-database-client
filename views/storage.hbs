@@ -26,7 +26,7 @@
             </div>
 
             <p>
-                <input type="submit" value="Search">
+                <button type="submit">Search</button>
             </p>
         </form>
     </div>
@@ -39,7 +39,7 @@
             Trainer ID: <input type="number" required="required" min="1" name="pid"><br>
             Pokemon ID: <input type="number" required="required" min="1" name="pokeid"></br>
             <br>
-            <input type="submit" value="Submit">
+            <button type="submit">Submit</button>
         </form>
         <br>
     </div>
@@ -54,7 +54,7 @@
             <tr>
                 <td>{{this.pid}}</td>
                 <td>{{this.pokeid}}</td>
-                <td><a href="/delete_storage?pid={{this.pid}}&pokeid={{this.pokeid}}">Delete</a></td>
+                <td><a href="/delete_storage?pid={{this.pid}}&pokeid={{this.pokeid}}"><button>Delete</button></a></td>
             </tr>
             {{/each}}
         </tbody>

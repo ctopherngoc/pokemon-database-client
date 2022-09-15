@@ -27,7 +27,7 @@
                     </select>
                 </div>
                 <p>
-                    <input type="submit" value="Search">
+                    <button type="submit">Search</button>
                 </p>
             </form>
         </div>
@@ -41,7 +41,7 @@
                     <input type="text" required="required" name="region_name">
                 <br>
                 <br>
-                    <input type="submit" value="Submit">
+                <button type="submit">Submit</button>
                 <br>
             </form>
             <br>
@@ -57,7 +57,7 @@
                 <tr>
                     <td>{{this.unique_region_id}}</td>
                     <td>{{this.region_name}}</td>
-                    <td><a href="/update_region?region_id={{this.unique_region_id}}&region_name={{this.region_name}}">Update</a></td>
+                    <td><a href="/update_region?region_id={{this.unique_region_id}}&region_name={{this.region_name}}"><button>Update</button></a></td>
                 </tr>
                 {{/each}}
             </tbody>
