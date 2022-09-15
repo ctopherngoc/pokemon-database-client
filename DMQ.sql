@@ -36,9 +36,6 @@ SELECT * FROM Trainer JOIN Region ON Regions.trainerID = Trainers.region
 --Delete all trainers with given specific gender
 DELETE FROM Trainer WHERE unique_player_id = :unique_player_idInput
 
---zzzzzzzzzzzzzzzzzz
---DELETE FROM Trainer WHERE gender = :genderInput
-
 --Delete all Pokemon with given ability 1
 DELETE FROM Pokemon WHERE ability_1 = :ability_1Input
 

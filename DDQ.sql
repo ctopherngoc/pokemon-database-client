@@ -55,6 +55,7 @@ VALUES
     ("Squirtle", 15, 25, 24, 15, 20, 30, "Water", NULL, "Water Gun", NULL, NULL);
 
 CREATE TABLE `Storage` (
+    `index` INT AUTO_INCREMENT KEY NOT NULL,
     `pid` INT NOT NULL,
     `pokeid` INT NOT NULL,
     FOREIGN KEY(`pid`) REFERENCES `Trainer`(`unique_player_id`),
