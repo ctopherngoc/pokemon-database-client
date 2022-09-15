@@ -95,8 +95,9 @@
                 <td>{{this.gender}}</td>
                 <td>{{this.age}}</td>
                 <td>{{this.region}}</td>
-                <td><a href="/delete_trainer?unique_player_id={{this.unique_player_id}}">Delete</a></td>
-                <td><a href="/update_trainer?unique_player_id={{this.unique_player_id}}&name_id={{this.name_id}}&gender={{this.gender}}&age={{this.age}}&region={{this.region}}">Update</a></td>
+                <td><a href="/delete_trainer?unique_player_id={{this.unique_player_id}}">Delete</a>
+                <a href="/update_trainer?unique_player_id={{this.unique_player_id}}&name_id={{this.name_id}}&gender={{this.gender}}&age={{this.age}}&region={{this.region}}">Update</a></td>
+                {{!-- <td><a href="/update_trainer?unique_player_id={{this.unique_player_id}}&name_id={{this.name_id}}&gender={{this.gender}}&age={{this.age}}&region={{this.region}}">Update</a></td> --}}
             </tr>
             {{/each}}
         </form>
