@@ -352,7 +352,6 @@ app.get('/delete_pokemon', function (req, res) {
 /* Update button redirects to update_pokemon*/
 /* Searches for Region from table */
 /* Converts letter to full gender text */
-
 app.get('/update_pokemon', function (req, res) {
     let insertQuery = `SELECT * FROM Pokemon WHERE breed_id=${req.query.breed_id}`;
     let result;
