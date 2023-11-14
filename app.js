@@ -8,7 +8,7 @@ var app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-/*PORT = process.env.PORT || 2733; */
+const PORT = process.env.PORT || 2733;
 
 // Database
 var db = require('./database/db-connector');
@@ -524,10 +524,7 @@ app.use(function(err, req, res, next)
 
 /*
     LISTENER
-    app.listen(PORT, function(){
-    console.log('Express started on http://localhost:' + PORT + '; press Ctrl-C to terminate.')
-});
 */
-app.listen(process.env.PORT, '0.0.0.0', function(err) {
-    console.log('Express started on  %s', app.url);
+app.listen(PORT, function(){
+    console.log('Express started on http://localhost: ' + PORT);
 });
